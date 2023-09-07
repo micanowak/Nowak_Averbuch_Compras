@@ -34,8 +34,8 @@ function App() {
         <Routes>
           <Route path='/' element={<Layout />}>
             <Route path='/Home' index element={<Home products={listaProductos} />}></Route>
-            <Route path='/Productos' element={<Productos products={listaProductos} />}></Route> {/*:listaProductos*/}
-            <Route path='/DetalleProducto' element={<DetalleProducto />}></Route> {/*:id*/}
+            <Route path='/Productos' element={<Productos products={listaProductos}/>}></Route>
+            <Route path='/DetalleProducto/:id' element={<DetalleProducto products={listaProductos}/>}></Route>
             <Route path='/Contacto' element={<Contacto />}></Route>
             <Route path="*" element={<h1>404</h1>}></Route>
           </Route>
