@@ -22,7 +22,7 @@ function App() {
 
   const deleteItem = (id) => {
     if(id != undefined){
-      listaCarrito.filter(c => c != id);
+      setListaCarrito(listaCarrito.filter(c => c != id));
     }
   }
 
@@ -48,8 +48,8 @@ function App() {
         <Routes>
           <Route path='/' element={<Layout />}>
             <Route path='/Home' index element={<Home products={listaProductos} />}></Route>
-            <Route path='/Productos' element={<Productos products={listaProductos}/>}></Route>
-            <Route path='/DetalleProducto/:id' element={<DetalleProducto products={listaProductos} carrito={idCarrito}/>}></Route>
+            <Route path='/Productos' element={<Productos products={listaProductos} listaCarrito={listaCarrito}/>}></Route>
+            <Route path='/DetalleProducto/:id' element={<DetalleProducto products={listaProductos} carrito={idCarrito} />}></Route>
             <Route path='/Contacto' element={<Contacto />}></Route>
             <Route path='/Carrito' element={<Carrito listaCarrito={listaCarrito} listaProductos={listaProductos} sendDeleted={deleteItem} />}></Route>
             <Route path="*" element={<h1>404</h1>}></Route>

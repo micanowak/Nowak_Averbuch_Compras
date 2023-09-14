@@ -12,6 +12,7 @@ const Carrito = ({listaCarrito, listaProductos, sendDeleted}) => {
             sendDeleted(id);
         }
     }
+    
 
     return (
         <div className='container'>

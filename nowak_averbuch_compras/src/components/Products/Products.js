@@ -1,20 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "../Products/Products.css";
 import { Link } from 'react-router-dom';
 
-const Products = ({products}) => {
+const Products = ({products, listaCarrito}) => {
+
+    const [check, setCheck] = useState(false);
 
     return (
         <div className='container'>
             <h2 className='tituloProd'>Productos</h2>
             <div className="containerProd">
-                {products.map(p => (
-                <div key={p.id} >
-
-                    <img className = 'imgs' src={p.images[0]} alt={p.title}/>
-                    <h3 className='nombreProd'>{p.title}</h3>
-                    <Link to={'/DetalleProducto/' + p.id} >More Info</Link>
-                </div>
+                {listaCarrito.map(c => (
+                    products.map(p => (
+                        <div key={p.id} >
+                            {p.id == c ? setCheck(true) : <p></p>}
+                            <img className = 'imgs' src={p.images[0]} alt={p.title}/>
+                            {check ? <p>check</p> : <p></p>}
+                            <h3 className='nombreProd'>{p.title}</h3>
+                            <Link to={'/DetalleProducto/' + p.id} >More Info</Link>
+                        </div>
+                    ))
                 ))}
             </div>
         </div>
