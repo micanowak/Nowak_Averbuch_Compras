@@ -7,10 +7,18 @@ import axios from 'axios';
 import { /*Text,*/ useState, useEffect } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Layout from './screens/Layout/Layout';
+import Carrito from './screens/Carrito/Carrito';
 
 function App() {
 
   const [listaProductos, setListaProductos] = useState([]);
+  const [listaCarrito, setListaCarrito] = useState([]);
+
+  const idCarrito = (id) => {
+    setListaCarrito([...listaCarrito, id]);
+    console.log(id);
+    console.log(listaCarrito);
+  }
 
   useEffect(() => {
     axios.get('https://dummyjson.com/products')
@@ -35,8 +43,9 @@ function App() {
           <Route path='/' element={<Layout />}>
             <Route path='/Home' index element={<Home products={listaProductos} />}></Route>
             <Route path='/Productos' element={<Productos products={listaProductos}/>}></Route>
-            <Route path='/DetalleProducto/:id' element={<DetalleProducto products={listaProductos}/>}></Route>
+            <Route path='/DetalleProducto/:id' element={<DetalleProducto products={listaProductos} carrito={idCarrito}/>}></Route>
             <Route path='/Contacto' element={<Contacto />}></Route>
+            <Route path='/Carrito' element={<Carrito listaCarrito={listaCarrito} listaProductos={listaProductos} />}></Route>
             <Route path="*" element={<h1>404</h1>}></Route>
           </Route>
         </Routes>

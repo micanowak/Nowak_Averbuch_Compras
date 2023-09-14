@@ -11,6 +11,8 @@ const Layout = () => {
                 <Link to='/Productos' className='links'>All Products</Link>
                 <br></br>
                 <Link to='/Contacto' className='links'>Contacto</Link>
+                <br></br>
+                <Link to='/Carrito' className='links'>Carrito</Link>
             </nav>
         <Outlet></Outlet>
         </>
