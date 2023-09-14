@@ -20,6 +20,12 @@ function App() {
     console.log(listaCarrito);
   }
 
+  const deleteItem = (id) => {
+    if(id != undefined){
+      listaCarrito.filter(c => c != id);
+    }
+  }
+
   useEffect(() => {
     axios.get('https://dummyjson.com/products')
       .then(response => {
@@ -45,7 +51,7 @@ function App() {
             <Route path='/Productos' element={<Productos products={listaProductos}/>}></Route>
             <Route path='/DetalleProducto/:id' element={<DetalleProducto products={listaProductos} carrito={idCarrito}/>}></Route>
             <Route path='/Contacto' element={<Contacto />}></Route>
-            <Route path='/Carrito' element={<Carrito listaCarrito={listaCarrito} listaProductos={listaProductos} />}></Route>
+            <Route path='/Carrito' element={<Carrito listaCarrito={listaCarrito} listaProductos={listaProductos} sendDeleted={deleteItem} />}></Route>
             <Route path="*" element={<h1>404</h1>}></Route>
           </Route>
         </Routes>
