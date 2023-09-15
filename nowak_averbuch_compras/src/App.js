@@ -1,6 +1,6 @@
 import './App.css';
 import Home from './screens/Home/Home';
-import Contacto from './screens/Contacto';
+import Contacto from './screens/Contacto/Contacto';
 import DetalleProducto from './screens/DetalleProducto';
 import Productos from './screens/Productos/Productos';
 import axios from 'axios';
