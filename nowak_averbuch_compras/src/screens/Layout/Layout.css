@@ -3,7 +3,37 @@
     color: red;
     padding: 10px 0;
     display: flex;
-    justify-content: flex-start;
-    align-items: left;  justify-content: space-around;
+    flex-direction: row;
+}
+.divLinks{
+    display: flex;
+    align-content: space-around;flex-wrap: wrap
 
+}
+.links{
+    color: black;
+    font-size: medium;
+    font-weight: 500;
+    margin:10px;
+
+}
+
+.button{
+    background-color: transparent;
+    border-color: rgb(196, 50, 171);
+    border-width: 2px;
+    border-radius: 8px;
+    padding: 15%;
+    font-size: medium;
+    width: 150px;
+    margin-right: 10px;
+}
+
+.logo{
+    width: 10%;
+    height: auto;
+    justify-content: flex-start;
+    align-items: left ; 
+    margin:10px;
+    margin-inline-end: auto;
 }

@@ -7,8 +7,11 @@ const Productos = ({products, listaCarrito}) => {
     
     return (
         //map lista productos como en el tp3 + buscador de productos
+        <div>
+            <h2 className='tituloProd'>Productos</h2>
         <Products className = 'titulo' products={products} listaCarrito={listaCarrito}></Products>
-        //<Link to='/DetalleProducto:id'>Detalle Producto</Link>
+        
+        </div>//<Link to='/DetalleProducto:id'>Detalle Producto</Link>
     );
 }
 

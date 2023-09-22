@@ -2,8 +2,19 @@
     background-color: "blue";
     align-items: "center";
     align-content: center;
-    width: 13%;
+    width: 20%;
     margin-left: 43.5%;
     margin-top: 5%;
+}
+
+.buttonContact{
+    background-color:rgb(226, 164, 216);
+    text-decoration-color: brown;
+    flex-wrap: wrap;
+    width:200px;
+    
+    padding: 10px;
+    margin-left: 7%;
+
 }
 

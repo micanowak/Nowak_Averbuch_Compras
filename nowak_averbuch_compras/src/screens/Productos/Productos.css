@@ -7,5 +7,7 @@
 
 }
 
-*{  border-width: 2;border-color: red;
+*{  border-color: rgb(196, 50, 171);
+  border-width: 2px;
+  border-radius: 8px;
 }
