@@ -5,22 +5,22 @@ const Contacto = () => {
     console.log("en Contacto");
 
     return (
-        <div>
+        <div className='todoElDiv'>
             <div className='form'>
                 <form >
-                    <label>
+                    <label className='label'>
                         Name:
-                        <br></br><input type="text" name="Nombre" />
+                        <br></br><input type="text" name="Nombre" className='label' />
                     </label> <br></br> <br></br>
-                    <label  >
+                    <label   className='label'>
                         Surname:
-                        <br></br><input type="text" name="Apellido" />
+                        <br></br><input type="text" name="Apellido" className='label' />
                     </label><br></br> <br></br>
-                    <label>
+                    <label className='label'>
                         Mail:
-                        <br></br><input type="text" name="Mail" />
+                        <br></br><input type="text" name="Mail" className='label'/>
                     </label><br></br><br></br>
-                    <label >
+                    <label className='label'>
                         Your Question:
                         <br></br><textarea />
                     </label><br></br>
@@ -29,7 +29,7 @@ const Contacto = () => {
                     <br></br>
                 </form>
             </div>
-            <div>
+            <div className='form'>
                 <button className='buttonContact'>Enviar</button>
             </div>
         </div>

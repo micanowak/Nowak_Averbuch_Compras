@@ -2,19 +2,30 @@
     background-color: "blue";
     align-items: "center";
     align-content: center;
-    width: 20%;
-    margin-left: 43.5%;
-    margin-top: 5%;
-}
+    width: 100%;
 
+    margin-top: 5%;
+    margin-bottom: -5%;
+}
+.label{
+    width: 100%;
+}
 .buttonContact{
     background-color:rgb(226, 164, 216);
     text-decoration-color: brown;
     flex-wrap: wrap;
-    width:200px;
-    
+    width:86%;
     padding: 10px;
     margin-left: 7%;
+    font-weight: 800;
+    
+}
 
+.todoElDiv{
+    width: 20%;
+    border-width: 2;
+    border-color: chartreuse;    
+    display: block;
+    margin: auto;
 }
 
