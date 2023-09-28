@@ -2,18 +2,29 @@
     text-align: center;
 }
 .nombreProd{
-color:rgb(223, 61, 88);
+color: rgb(196, 50, 171);
 }
 .imgs{
-     /* Mantiene la proporción de aspecto original */
-  max-width: 50%; /* Asegura que la imagen no exceda el ancho del contenedor */
-  align-items: center;
-  align-content: center;
+     max-width: 100%;
+     max-height: 40%; 
 }
 .containerProd{
-    column-count: 3;
+    display: grid;
+    grid-template-columns: repeat(3, 35%); /* Crear 3 columnas de tamaño igual */
+    gap: 1%; 
+   
+    padding-left: 1%;
+    
 }
 .container{
     border-color: blue;
     border-width: 30px;
 }
+
+.cadaUna{
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente */
+    justify-content: center; /* Centra verticalmente */
+    margin-left: 20%;
+}
+

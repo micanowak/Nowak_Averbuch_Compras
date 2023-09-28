@@ -1,7 +1,7 @@
 import './App.css';
 import Home from './screens/Home/Home';
 import Contacto from './screens/Contacto/Contacto';
-import DetalleProducto from './screens/DetalleProducto';
+import DetalleProducto from './screens/DetalleProducto/DetalleProducto';
 import Productos from './screens/Productos/Productos';
 import axios from 'axios';
 import { /*Text,*/ useState, useEffect } from 'react';

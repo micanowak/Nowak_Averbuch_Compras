@@ -11,19 +11,24 @@ const Products = ({ products, listaCarrito }) => {
         <div className='container'>
             
             <div className="containerProd">
-                {listaCarrito && products ? (
-                    listaCarrito.map(c => (
+                {/*listaCarrito &&*/ products ? (
+                    /*listaCarrito.map(c => (*/
                         products.map(p => (
-                            <div key={p.id}>
-                                {p.id === c ? setCheck(true) : <p></p>}
+                            <div className = 'cadaUna' key={p.id}>
+                                <img className='imgs' src={p.images[0]} alt={p.title} />
+                                {listaCarrito.includes(p.id) ? <p>check</p> : null}
+                                <h3 className='nombreProd'>{p.title}</h3>
+                                <Link to={'/DetalleProducto/' + p.id}><button className='buttonMore'>More Info</button></Link>
+                                {/*{p.id === c ? setCheck(true) : <p></p>}
                                 <img className='imgs' src={p.images[0]} alt={p.title} />
                                 {check ? <p>check</p> : <p></p>}
                                 <h3 className='nombreProd'>{p.title}</h3>
-                                <Link to={'/DetalleProducto/' + p.id}>More Info</Link>
+                                <Link to={'/DetalleProducto/' + p.id}>More Info</Link>*/}
                             </div>
                         ))
-                    ))
-                ) : (
+                    )
+                    : 
+                    (
                     <p>Loading... </p>
                 )}
             </div>
