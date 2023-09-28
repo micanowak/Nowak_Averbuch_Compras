@@ -29,7 +29,7 @@ const DetalleProducto = ({products, carrito}) => {
                         (
                         <div>
                             <p>{p.title}</p> 
-                            <img className='imgs' src={p.images} alt={p.title} ></img>
+                            <img className='imgs' src={p.images[0]} alt={p.title} ></img>
                         </div>
                         ) 
                         : 

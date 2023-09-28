@@ -17,10 +17,10 @@ const Carrito = ({listaCarrito, listaProductos, sendDeleted}) => {
     return (
         <div className='container'>
             <h2 className='tituloProd'>Carrito</h2>
-            <div className="containerCarrito">
+            <div className="containerCarrito" >
             {listaCarrito.map(c => (
                     listaProductos.map(p => (
-                        p.id == c ? <CarritoProduct producto={p} deleteItem={deleteItemHandler} /> : <p></p>
+                       p.id == c ? <CarritoProduct producto={p} deleteItem={deleteItemHandler} /> : <p></p>
                     ))
                 ))}
             </div>
