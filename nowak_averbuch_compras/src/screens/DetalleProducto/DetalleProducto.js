@@ -1,30 +1,35 @@
-import { Button } from 'bootstrap';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import { useParams } from 'react-router-dom'
 import "../DetalleProducto/DetalleProducto.css";
 
-const DetalleProducto = ({products, carrito}) => {
+const DetalleProducto = ({ products, carrito }) => {
     const { id } = useParams();
-    const [producto, setProducto] = useState([]);
+    const [producto, setProducto] = useState(null);
     const [agregadoAlCarrito, setAgregadoAlCarrito] = useState(false);
-    
-    /*for (let index = 0; index < products.length; index++) {
-        if(products[index].id === id){
-            setProducto(products[index]);
-        }     
-    }*/
+
+    const selectedProduct = products.find(p => p.id === id);
+
+    useEffect(() => {
+    if (selectedProduct) {
+        setProducto(selectedProduct);
+    }
+    }, [selectedProduct]);
 
     const carritoOnClickHandler = () => {
         setAgregadoAlCarrito(true);
         carrito(id);
-    }
+    };
 
+    const saveLocalStorage = () => {
+      // Guardar solo el producto seleccionado en localStorage
+        localStorage.setItem(id, JSON.stringify(selectedProduct));
+    };
     return (
         <div className='containerDetalle'>
             <h2 className='tituloProd'>Producto</h2>
             <div >
                 {products.map(p => (
-                    <div>
+                    <div key={p.id}>
                         {p.id == id ? 
                         (
                         <div>
@@ -39,7 +44,7 @@ const DetalleProducto = ({products, carrito}) => {
                     
                     </div>
                 ))}
-                <p onClick={carritoOnClickHandler}><button className='buttonNormal'>Agregar al carrito</button></p>
+                < p onClick={saveLocalStorage}><button className='buttonNormal' onClick={carritoOnClickHandler}>Agregar al carrito</button></p>
                 {agregadoAlCarrito ? <p>Se agregó al carrito</p> : <p></p>}
             </div>
         </div>

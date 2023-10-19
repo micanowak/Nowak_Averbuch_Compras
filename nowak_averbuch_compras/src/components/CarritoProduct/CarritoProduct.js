@@ -15,7 +15,6 @@ const CarritoProduct = ({producto, deleteItem}) => {
                     <img className = 'imgCarrito' src={producto.images} alt={producto.title}/>
                     <h3 className='nombreProd'>{producto.title}</h3>
                     {/*<Link to={'/DetalleProducto/' + producto.id} >More Info</Link>*/}
-                  
                     <button onClick={deleteOnClickHandler}>Delete Item</button>  <br></br>
                     <br></br>
                     <br></br>

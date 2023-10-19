@@ -19,11 +19,7 @@ const Products = ({ products, listaCarrito }) => {
                                 {listaCarrito && listaCarrito.some(prod => prod == p.id) ? <p>Ya está en el carrito!</p> : null}
                                 <h3 className='nombreProd'>{p.title}</h3>
                                 <Link to={'/DetalleProducto/' + p.id}><button className='buttonMore'>More Info</button></Link>
-                                {/*{p.id === c ? setCheck(true) : <p></p>}
-                                <img className='imgs' src={p.images[0]} alt={p.title} />
-                                {check ? <p>check</p> : <p></p>}
-                                <h3 className='nombreProd'>{p.title}</h3>
-                                <Link to={'/DetalleProducto/' + p.id}>More Info</Link>*/}
+
                             </div>
                         ))
                     )

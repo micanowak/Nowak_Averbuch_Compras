@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+//import { useEffect, useState } from 'react';
 import "../Carrito/Carrito.css";
-import { useParams } from 'react-router-dom'
+//import { useParams } from 'react-router-dom'
 import CarritoProduct from '../../components/CarritoProduct/CarritoProduct';
 
 
@@ -20,7 +20,7 @@ const Carrito = ({listaCarrito, listaProductos, sendDeleted}) => {
             <div className="containerCarrito" >
             {listaCarrito.map(c => (
                     listaProductos.map(p => (
-                       p.id == c ? <CarritoProduct producto={p} deleteItem={deleteItemHandler} /> : <p></p>
+                        p.id == c ? <CarritoProduct producto={p} deleteItem={deleteItemHandler} /> : <p></p>
                     ))
                 ))}
             </div>
